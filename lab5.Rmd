@@ -1,0 +1,121 @@
+---
+title: "Does Curriculum Matter?"
+author: "Allison Theobold"
+date: "September 24, 2019"
+output:
+  pdf_document: default
+  word_document: default
+---
+
+# Introduction 
+
+This research investigates the relationship between students' curriculum and 
+the grade they received, specifically for Montana State University students 
+enrolled in STAT 216. In the spring of 2015 students enrolled in either a 
+"traditional" STAT 216 course or a "TEAL" based curriculum. The TEAL curriculum 
+was a simulation based, hands-on course, taught in a interactive TEAL 
+(Technology Enhanced Active Learning) classroom. This course had daily 
+activities from a course pack, and very little lecture. The "traditional" 
+curriculum was given in a typical lecture style classroom, with daily lectures,
+and select weekly activities similar to the TEAL course.  
+
+Research has shown that these TEAL classrooms increase student engagement and 
+retention. Therefore, we wish to study if the TEAL curriculum provides an 
+overall better outcome for student's grades in STAT 216. 
+
+## Data Collection 
+
+The data collected on students in STAT 216 in the spring of 2015 include the 
+following variables: 
+
+* the student's unique identifier (number)  
+* what score they earned on the ACT math exam  
+* what score they earned on the SAT math exam    
+* what score they earned on the math placement exam (at MSU)   
+* when they took their most recent math course (30 = spring, 70 = fall, 50 = summer)   
+* the last math course they took (math subject plus math course)  
+* the grade they received in that math course  
+* similar information for their last statistics course  
+* what their AP Calc grade transferred as  
+* what their AP Stat grade transferred as  
+* what their cumulative GPA was the semester prior to enrolling in Stat 216  
+* the curriculum each student was enrolled in (Lock or MSU.0)  
+* their Stat 216 course grade, converted to the GPA scale (4.0 = A, 3.0 = B, 2.0 = C, 1.0 = D, etc.)  
+
+
+# Methods  
+
+For the research question of interest, the explanatory variable refers to the 
+curriculum which the students took, either the TEAL or traditional, and the 
+response variable refers to the grade which the students received. 
+
+
+```{r plots2015, echo = FALSE, message = FALSE, fig.width = 5, fig.height = 4}
+library(tidyverse)
+
+stat216 <- read.csv("C:/Users/allisontheobold/Documents/Stat 511/Labs/stat-411-511-lab5/data/stat216_spring2015.csv")
+
+ggplot(stat216, mapping = aes(x = curric, y = GPAgrade)) + 
+   geom_violin()
+
+```
+
+For the data of Spring 2015 the students in the "traditional" curriculum and the
+TEAL curriculum got the same mean grade with distributions looking the same via
+a violin plot of the data. We can see this visually on the violin plot  
+where the traditional and TEAL curricula have similar shaped distributions with
+equal centers and spread. 
+
+The statistical procedures we will be using to determine if there exists a
+difference in true mean student GPA between the TEAL curriculum and the 
+traditional for the 2015 students is a two-sample t-test on 1192 degrees of 
+freedom. To estimate the difference in true means between the two curricula, we
+will provide an approximate 95% confidence interval using t-based methods. 
+
+We will proceed with a t-test because we have met the assumptions of the method, 
+(1) the data are independent, and (2) the two groups have similar distributions. 
+
+
+## Hypotheses  
+
+For our research question we will test the following hypothesis, 
+
+$\mu_{traditional} \neq \mu_{TEAL}.$ 
+
+
+# Results 
+
+After running the statistical analysis we find that there is significant 
+evidence to show that the mean grades of students in the TEAL program differ 
+from the mean grades of the students in the traditional program 
+(p-value = 0, t = -3.9114). there is strong evidence supporting the alternative
+hypothesis that the spring 2015 TEAL curriculum has an effect on a student's 
+course grade. Due to these results, we conclude that the TEAL curriculum 
+increases students' course grade at Montana State University during the spring
+semester of 2015.
+
+
+```{r spring15, message = FALSE}
+library(infer)
+
+t.test(GPAgrade ~ curric, data = stat216)
+
+```
+
+
+# Scope of Inference  
+
+The students in STAT 216 for spring 2015 were not randomly selected from a 
+larger population of STAT 216 students, and therefore we cannot infer the 
+findings of this research to a larger population. Rather, we can only infer the
+results of this study to those who wherein the study. In addition, the students
+were not randomly assigned to the different types of curricula, which prohibits
+us from being able to draw any cause-and-effect conclusions for this study.
+
+
+# Code Appendix
+
+```{r, ref.label = "plots2015", eval = FALSE}
+
+```
+

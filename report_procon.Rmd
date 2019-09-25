@@ -1,0 +1,138 @@
+---
+title: "Lab 5 -- Does Curriculum Matter?"
+author: "Your Group's Names Here (including last names)!"
+date: "Due: October 1 at 5pm"
+output: html_document
+---
+
+For this lab you are charged with reproducing and critically evaluating a 
+statistical report. Your group is expected to do the following:  
+
+
+__1. Reproduce the statistical procedure included in the report.__ 
+
+* What did you have to modify to reproduce the statistical procedure used?  
+
+
+
+
+
+* What was unclear to you when attempting to reproduce the statistical procedure?  
+
+
+
+
+__2. Change the statistical procedure used in the report as needed.__ 
+<!-- Remove the procedures from the original report and insert your revisions. -->
+
+* What modifications to the procedure needed made? Why?  
+
+
+
+
+
+__3. Read the report and for each section create a pro/con list of what was good and what needs improvements.__  
+Include **at least** three pros and three cons for each section! 
+
+__Introduction__   
+
+__PRO:__ 
+
+- One: 
+- Two: 
+- Three: 
+
+__CON:__ 
+
+- One: 
+- Two: 
+- Three: 
+
+
+__Data Collection__   
+
+__PRO:__ 
+
+- One: 
+- Two: 
+- Three: 
+
+__CON:__ 
+
+- One: 
+- Two: 
+- Three: 
+
+
+__Methods__ 
+
+__PRO:__ 
+
+- One: 
+- Two: 
+- Three: 
+
+__CON:__ 
+
+- One: 
+- Two: 
+- Three: 
+
+
+__Hypothesis__  
+<!-- This section only needs at least 2 points.  -->
+
+__PRO:__ 
+
+- One: 
+- Two: 
+
+__CON:__ 
+
+- One: 
+- Two: 
+
+
+__Results__  
+
+__PRO:__ 
+
+- One: 
+- Two: 
+- Three: 
+
+__CON:__ 
+
+- One: 
+- Two: 
+- Three: 
+
+
+__Scope of Inference__ 
+
+__PRO:__ 
+
+- One: 
+- Two: 
+- Three: 
+
+__CON:__ 
+
+- One: 
+- Two: 
+- Three: 
+
+
+__Overall Report Format__  
+<!-- This section only needs at least 2 points.  -->
+
+__PRO:__ 
+
+- One: 
+- Two: 
+
+__CON:__ 
+
+- One: 
+- Two: 
+

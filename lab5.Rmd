@@ -55,8 +55,7 @@ library(tidyverse)
 
 stat216 <- read.csv("C:/Users/allisontheobold/Documents/Stat 511/Labs/stat-411-511-lab5/data/stat216_spring2015.csv")
 
-ggplot(stat216, mapping = aes(x = curric, y = GPAgrade)) + 
-   geom_violin()
+ggplot(stat216,mapping=aes(x=curric,y=GPAgrade)) + geom_violin()
 
 ```
 
@@ -98,7 +97,7 @@ semester of 2015.
 ```{r spring15, message = FALSE}
 library(infer)
 
-t.test(GPAgrade ~ curric, data = stat216)
+t.test(GPAgrade~curric,data=stat216)
 
 ```
 

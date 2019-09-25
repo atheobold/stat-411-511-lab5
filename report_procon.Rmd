@@ -17,7 +17,7 @@ __1. Reproduce the statistical procedure included in the report.__
 
 
 
-* What was unclear to you when attempting to reproduce the statistical procedure?  
+* Was anything unclear to you when attempting to reproduce the statistical procedure? If so, what was unclear?    
 
 
 
@@ -25,7 +25,7 @@ __1. Reproduce the statistical procedure included in the report.__
 __2. Change the statistical procedure used in the report as needed.__ 
 <!-- Remove the procedures from the original report and insert your revisions. -->
 
-* What modifications to the procedure needed made? Why?  
+* What modifications to the statistical procedure needed made? Why?  
 
 
 

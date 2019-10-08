@@ -1,0 +1,206 @@
+---
+title: "Lab 5 -- Does Curriculum Matter?"
+author: "KEY - by Allison"
+date: 'Created on: `r Sys.Date()`'
+output:
+  pdf_document:
+  html_document:
+    toc: yes
+    toc_float: yes
+header-includes: \usepackage{xcolor}
+---
+
+For this lab you are charged with reproducing and critically evaluating a 
+statistical report. Your group is expected to do the following:  
+
+
+__1. Reproduce the statistical procedure included in the report.__ 
+
+* What did you have to modify to reproduce the statistical procedure used?  
+
+</br>
+
+\color{blue}
+The code to read in the data file is a full-path to where the data were stored 
+on my (Allison's) computer. You need to change this to be the path *relative* to
+where the data are stored in the RStudio project.  
+
+The path should look like:
+\color{black}
+
+```{r, eval = FALSE}
+stat216 <- read.csv("data/stat216_spring2015.csv")
+```
+
+\color{blue}
+Once the path has been modified, the t-test executes and you should obtain the 
+same test statistic and p-value as the report. 
+\color{black}
+
+</br>
+</br>
+
+* Was anything unclear to you when attempting to reproduce the statistical 
+procedure? If so, what was unclear?    
+
+\color{blue}
+In the Introduction the report states that "we wish to study if the TEAL 
+curriculum provides an overall better outcome for student’s grades in STAT 216."
+However, the hypotheses provided and the t-test performed are for a two-sided 
+test for a difference in means. Thus, the either the code would need to be 
+modified to perform a one-sided t-test or the Introduction would need to be 
+revised to state that they wish to study if there is a difference in the 
+curricula. 
+\color{black}
+
+</br>
+</br>
+
+__2. Change the statistical procedure used in the report as needed.__ 
+<!-- Remove the procedures from the original report and insert your revisions. -->
+
+* What modifications to the statistical procedure needed made? Why?  
+
+</br>
+
+\color{blue}
+The assumptions of a t-test are:  
+
+* independence
+* equal variance of the groups
+* normally distributed responses (population distributions are normally distributed) 
+
+It does not seem likely that the assumption of independence is violated, as we
+are considering data from only one semester and a student can only enroll in one 
+Stat 216 course each semester. 
+
+It also seems that the two curricula have similarly spread distributions, both
+ranging in GPA grades from 0.0 to 4.0. However, the distribution of the grades 
+for both curricula **do not** appear to come from a Normal distribution. Thus, 
+the assumption of normally distributed responses is violated and a t-test is 
+not an appropriate statistical procedure.  
+
+Instead, a permutation test should be conducted. This test assumes that the 
+distributions of each group are similar. As seen in the violin plots, it does 
+not appear that the shapes of the distributions differ substantially. 
+\color{black}
+
+\pagebreak
+
+__3. Read the report and for each section create a pro/con list of what was good and what needs improvements.__  
+Include **at least** three pros and three cons for each section! 
+
+\color{blue}
+A compilation of my responses and your responses are included in each pro/con, 
+in italics. 
+\color{black} 
+
+</br>
+
+__Introduction__   
+
+__PRO:__ 
+
+- One: *Nice description of background information, situating the context of the study.* 
+- Two: *Articulates how curricula differ from each other.* 
+- Three: *Stated research question*    
+
+__CON:__ 
+
+- One: *Description of curricula (TEAL & traditional) don't match names of 
+curricula in the data (MSU.0 & Lock).*
+- Two: *The research question stated does not match the hypotheses stated and 
+the t-test carried out.*
+- Three: *Doesn't describe how the students were placed in either classroom 
+(Did they choose? Was it random?)* 
+
+
+__Data Collection__   
+
+__PRO:__ 
+
+- One: *Thoroughly outlined how students' grades were calculated*
+- Two: *Bullet points lays out the variables in an easy to read form.*
+- Three: *Lists all questions asked of students* 
+
+__CON:__ 
+
+- One: *Cite previous research done that supports better learning in TEAL classrooms.* 
+- Two: *It does not explain how data was collected or sample size, etc.*
+- Three: *Possibly too much information on the data collected, especially the 
+data that are not being used to address the research question.*
+
+
+__Methods__ 
+
+__PRO:__ 
+
+- One: *Nice to have plots in the section where the distribution of the data is being discussed.*  
+- Two: *Used plots to asses assumptions and included them in report so reader can see them visually also.* 
+- Three: *Statistical analysis used is directly stated, alongside the response and explanatory variables*
+
+__CON:__ 
+
+- One: *Doesn't address the assumption of normality at all!* 
+- Two: *The x-axis label could be more descriptive.* 
+- Three: *Labels on the plot should agree with the names of the curriculum being discussed.*
+
+
+__Hypothesis__  
+<!-- This section only needs at least 2 points.  -->
+
+__PRO:__ 
+
+- One: *Nice layout with the math equations!* 
+- Two: *Uses common notation for differences in means*
+
+__CON:__ 
+
+- One: *Does not explicitly state the null hypothesis.*
+- Two: *Alternative hypothesis does not agree with previously stated research question.*
+
+
+__Results__  
+
+__PRO:__ 
+
+- One: *References p-value alongside the test statistic obtained.*
+- Two: *Uses language of "evidence against" as opposed to rejecting the null for some arbitrary $\alpha$ level.* 
+- Three: *They provide interpretations of the test in the context of the problem, rather than simply stating 'there is evidence against the null.'*
+
+__CON:__ 
+
+- One: *A p-value is never truly 0. It should be reported to be < 0.0001 if it is very small.*
+- Two: *A small p-value provides **evidence against** the null hypothesis, not **evidence for** the alternative hypothesis.* 
+- Three: *Conclusion is for a one-sided test, when a two-sided t-test was performed.*  
+
+
+__Scope of Inference__ 
+
+__PRO:__ 
+
+- One: *Correctly states the population of interest.* 
+- Two: *Correctly states that we cannot make cause-and-effect statements.* 
+- Three: *Correctly states that we cannot infer to a larger population because students were not randomly sampled.*
+
+__CON:__ 
+
+- One: *Doesn't state how the students were assigned to courses, just that it was non-random.*
+- Two: *Doesn't state that we can say that curriculum is **associated** with a difference in grade.* 
+- Three: *Never states results in the context of this scope of inference.*
+
+
+__Overall Report Format__  
+<!-- This section only needs at least 2 points.  -->
+
+__PRO:__ 
+
+- One: *Report is in good coherent order, and uses good grammar.* 
+- Two: *Having section headings makes the report feel well organized.*
+
+__CON:__ 
+
+- One: *All code used in the report should have been included in the appendix.*
+- Two: *Code output is included in the report and should not be. It makes reading the results difficult.*
+- Three: *The report has spelling errors!* 
+
